@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="blocksDescendants"
+
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".KhoanChi.khoanchi">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ListView
+        android:descendantFocusability="blocksDescendants"
+
+        android:id="@+id/rvKhoanchi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btnaddKhoanchi"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="78dp"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:background="@drawable/icon_add" />-->
+
+    <at.markushi.ui.CircleButton
+
+        android:outlineSpotShadowColor="@color/red"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/btnaddKhoanchi"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:src="@drawable/ic_add_black"
+        app:cb_color="@color/red"
+        app:cb_pressedRingWidth="7dip" />
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/texviewshow_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</FrameLayout>

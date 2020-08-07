@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/fragmentThongke"
+    android:layout_height="match_parent"
+    tools:context=".ThongKe.thongke">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="@dimen/_30sdp"
+            android:background="@color/colorPrimary"
+            android:text="Tổng thu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/_25sdp"
+            android:id="@+id/tongThu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/_30sdp"
+            android:background="@color/colorPrimary"
+            android:text="Chi tiêu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/_25sdp"
+            android:id="@+id/tongchi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/_30sdp"
+            android:background="@color/colorPrimary"
+            android:text="Cân đối"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textSize="@dimen/_25sdp"
+            android:id="@+id/candoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/tong"
+            android:text="Tất cả"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/thang"
+            android:text="Tháng"
+            android:background="@color/white"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/nam"
+            android:text="Năm"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_gravity="bottom|right"
+        >
+        <com.getbase.floatingactionbutton.FloatingActionButton
+             app:fab_title="Chart"
+            android:background="@color/white"
+            android:id="@+id/floataction1"
+             app:fab_size="normal"
+            app:fab_icon="@drawable/icons8chart80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            app:fab_title="biểu đồ 2"
+            app:fab_size="mini"
+            android:id="@+id/floataction2"
+            app:fab_icon="@drawable/ic_add_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
+
+<!--    <Button-->
+<!--        android:layout_marginVertical="@dimen/_10sdp"-->
+<!--        android:id="@+id/btnChart"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="78dp"-->
+<!--        android:layout_gravity="bottom|right"-->
+<!--        android:background="@drawable/icon_dothi" />-->
+
+
+
+</FrameLayout>

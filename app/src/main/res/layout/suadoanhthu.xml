@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:outlineAmbientShadowColor="@color/colorAccent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:shadowColor="@color/colorAccent"
+        android:gravity="center"
+        android:textSize="@dimen/_35sdp"
+        android:text="Doanh Thu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    //danh mục
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvDanhmuc"
+            android:layout_weight="3"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:text="Danh mục:"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <EditText
+
+            android:id="@+id/editDanhmuc_11"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+
+
+    //số tiền
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:weightSum="16"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="6"
+            android:gravity="center"
+            android:id="@+id/tvSotien"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Số tiền: "
+            android:textSize="20dp" />
+
+        <EditText
+            android:inputType="number"
+            android:id="@+id/editSotien_11"
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="VNĐ"
+            android:layout_weight="7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+
+    //ngày
+    <LinearLayout
+        android:weightSum="16"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="10"
+            android:id="@+id/tvNgay_11"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="Ngày:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/editSuangay_11"
+            android:hint="Chọn ngày"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:background="@drawable/icon_lich"
+            android:id="@+id/btnNgay_11"
+            android:layout_weight="1"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"/>
+    </LinearLayout>
+
+
+
+    //ghi chú
+    <LinearLayout
+        android:weightSum="4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_weight="3"
+            android:gravity="center"
+            android:id="@+id/tvGhichu"
+            android:textSize="20dp"
+            android:text="Ghi chú:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/editGhichu_11"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    //Button
+    <LinearLayout
+        android:layout_marginTop="@dimen/_20sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="1"
+            android:text="Xoa"
+            android:id="@+id/editXoa_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/editResert_11"
+            android:text="Resert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/editUpdate_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LƯU" />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/btncancel_11"
+            android:text="CANCEL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

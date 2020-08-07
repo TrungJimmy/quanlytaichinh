@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+
+    tools:context=".DoanhThu.doanhthu">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <ListView
+        android:id="@+id/rvDoanhthu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="blocksDescendants" />
+
+
+
+    <at.markushi.ui.CircleButton
+        android:outlineSpotShadowColor="@color/red"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_gravity="bottom|right"
+        android:id="@+id/btnadddoanhthu"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:src="@drawable/ic_add_black"
+        app:cb_color="@color/blue"
+        app:cb_pressedRingWidth="7dip" />
+
+
+<!--    <ImageButton-->
+<!--        android:src="@drawable/ic_add_black"-->
+<!--        android:layout_marginRight="@dimen/_10sdp"-->
+<!--        android:layout_marginBottom="@dimen/_10sdp"-->
+<!--        android:shadowColor="@color/red"-->
+<!--        android:background="@drawable/round_button"-->
+<!--        android:id="@+id/btnadddoanhthu"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="78dp"-->
+<!--        android:layout_gravity="bottom|right"-->
+
+
+<!--          />-->
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/texviewshow_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</FrameLayout>
