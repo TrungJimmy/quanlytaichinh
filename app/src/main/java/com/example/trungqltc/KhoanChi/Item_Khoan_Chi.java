@@ -4,7 +4,7 @@ public class Item_Khoan_Chi {
 
     int id_2;
     String danhmuc_2;
-    int tien_2;
+    float tien_2;
     String ngay_2;
     String ghichu_2;
 
@@ -15,14 +15,14 @@ public class Item_Khoan_Chi {
         this.tien_2 = tien_2;
     }
 
-    public Item_Khoan_Chi(String danhmuc_2, int tien_2, String ngay_2, String ghichu_2) {
+    public Item_Khoan_Chi(String danhmuc_2, float tien_2, String ngay_2, String ghichu_2) {
         this.danhmuc_2 = danhmuc_2;
         this.tien_2 = tien_2;
         this.ngay_2 = ngay_2;
         this.ghichu_2 = ghichu_2;
     }
 
-    public Item_Khoan_Chi(int id_2, String danhmuc_2, int tien_2, String ngay_2, String ghichu_2) {
+    public Item_Khoan_Chi(int id_2, String danhmuc_2, float tien_2, String ngay_2, String ghichu_2) {
         this.id_2 = id_2;
         this.danhmuc_2 = danhmuc_2;
         this.tien_2 = tien_2;
@@ -46,11 +46,11 @@ public class Item_Khoan_Chi {
         this.danhmuc_2 = danhmuc_2;
     }
 
-    public int getTien_2() {
+    public float getTien_2() {
         return tien_2;
     }
 
-    public void setTien_2(int tien_2) {
+    public void setTien_2(float tien_2) {
         this.tien_2 = tien_2;
     }
 

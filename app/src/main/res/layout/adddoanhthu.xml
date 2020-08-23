@@ -3,120 +3,159 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:outlineAmbientShadowColor="@color/colorAccent"
-    android:layout_height="match_parent">
-    <TextView
-        android:textColor="@color/blue"
-        android:shadowColor="@color/colorAccent"
-        android:gravity="center"
-        android:textSize="@dimen/_30sdp"
-        android:text="Doanh Thu"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="50dp"
+        android:background="#2CBF60">
+
+        <TextView
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="28dp"
+            android:text="Doanh Thu"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
 
     //danh mục
     <LinearLayout
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
+
         <TextView
             android:id="@+id/textviewDanhmuc"
-            android:layout_weight="3"
-             android:textSize="@dimen/_15sdp"
+             android:textSize="20dp"
             android:gravity="center"
-            android:text="Danh mục"
-            android:layout_width="match_parent"
+            android:text="Danh mục:"
+            android:textAlignment="viewEnd"
+            android:layout_width="100dp"
             android:layout_height="match_parent"/>
-        <EditText
 
+        <EditText
             android:id="@+id/edittextDanhmuc_1"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
+
+        <ImageButton
+            android:id="@+id/btnMenuAddDoanhThu"
+            android:layout_width="36dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="6dp"
+            android:src="@drawable/icon_menu_bg_off" />
+
     </LinearLayout>
 
 
     //số tiền
     <LinearLayout
-
-        android:weightSum="16"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
+
         <TextView
-            android:layout_weight="6"
             android:gravity="center"
             android:id="@+id/textviewSotien"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:textAlignment="viewEnd"
             android:text="Số tiền: "
             android:textSize="20dp" />
 
         <EditText
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:id="@+id/edittextSotien_1"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
+
         <TextView
             android:text="VNĐ"
-            android:layout_weight="7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"/>
     </LinearLayout>
 
 
     //ngày
     <LinearLayout
-        android:weightSum="10"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
 
         <TextView
             android:id="@+id/textviewNgay_1"
-            android:layout_width="187dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:layout_weight="3"
             android:gravity="center"
+            android:textAlignment="viewEnd"
             android:text="Ngày:"
             android:textSize="20dp" />
+
         <EditText
             android:inputType="date"
              android:id="@+id/edittextNgay_1"
             android:hint="Chọn ngày"
-            android:layout_weight="7"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/btnNgay_1"
-            android:layout_weight="1"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:background="@drawable/icon_lich" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btnNgay_1"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="@dimen/_60sdp"-->
+<!--            android:layout_height="@dimen/_60sdp"-->
+<!--            android:background="@drawable/icon_lich" />-->
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icons8_calendar_96"/>
 
 
     </LinearLayout>
 
     //ghi chú
     <LinearLayout
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
+
         <TextView
-            android:layout_weight="3"
+
             android:gravity="center"
             android:id="@+id/textviewGhichu"
             android:textSize="20dp"
             android:text="Ghi chú:"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:textAlignment="viewEnd"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/edittextGhichu_1"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
@@ -126,25 +165,29 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp">
 
-        <Button
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@color/white"
-            android:background="@drawable/ovan_button"
-           android:layout_marginRight="20dp"
-            android:text="HỦY"
-            android:id="@+id/buttonHuy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
         <Button
             android:textSize="@dimen/_15sdp"
             android:textColor="@color/white"
             android:background="@drawable/ovan_hight"
             android:text="LƯU"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/buttonLuu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <Button
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:background="@drawable/ovan_button"
+
+            android:text="HỦY"
+            android:id="@+id/buttonHuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 

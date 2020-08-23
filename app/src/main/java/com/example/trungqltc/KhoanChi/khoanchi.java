@@ -1,21 +1,26 @@
 package com.example.trungqltc.KhoanChi;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
+import com.example.trungqltc.NumberTextWatcher;
 import com.example.trungqltc.R;
 
 import java.text.SimpleDateFormat;
@@ -30,6 +35,8 @@ public class khoanchi extends Fragment {
     ListView rvKhoanchi;
     List<Item_Khoan_Chi> list_khoanchi;
     AdapterKhoanChi adapterKhoanChi;
+    private static String prefix = "VND ";
+    private static final int MAX_DECIMAL = 3;
 
     public AlertDialog alertDialog;
 
@@ -55,31 +62,62 @@ public class khoanchi extends Fragment {
         setAdapter();
 
 
-
-
-
-
         btnaddkhoanchi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                final View alert = LayoutInflater.from(getContext()).inflate(R.layout.add_khoan_chi,null);
+                final View alert = LayoutInflater.from(getContext()).inflate(R.layout.add_khoan_chi, null);
                 builder.setView(alert);
-                final EditText edittextDanhmuc_2,edittextSotien_2,edittextNgay_2,edittextGhichu_2;
-                final Button buttonHuy_2,buttonLuu_2;
+                final EditText edittextDanhmuc_2, edittextSotien_2, edittextNgay_2, edittextGhichu_2;
+                final Button buttonHuy_2, buttonLuu_2;
+                final ImageButton btnMenuAddKhoanChi, btnMenuSuaKhoanChi;
 
                 Log.d("log", "onStart: ");
                 edittextDanhmuc_2 = alert.findViewById(R.id.edittextDanhmuc_2);
                 edittextSotien_2 = alert.findViewById(R.id.edittextSotien_2);
                 edittextNgay_2 = alert.findViewById(R.id.edittextNgay_2);
                 edittextGhichu_2 = alert.findViewById(R.id.edittextGhichu_2);
-
+                btnMenuAddKhoanChi = alert.findViewById(R.id.btnMenuAddKhoanChi);
                 buttonHuy_2 = alert.findViewById(R.id.buttonHuy_2);
                 buttonLuu_2 = alert.findViewById(R.id.buttonLuu_2);
 
                 final DB_Khoanchi db_khoanchi = new DB_Khoanchi(getContext());
 
                 //Chọn ngày
+                btnMenuAddKhoanChi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(),"Adddd",Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                        View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
+                        final Spinner mSpinner = mView.findViewById(R.id.menuSpinner);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,
+                                getResources().getStringArray(R.array.Spend));
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        mSpinner.setAdapter(adapter);
+                        Toast.makeText(getContext(),"Adddd_22222",Toast.LENGTH_SHORT).show();
+                        mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                if(!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Chọn mục thu")){
+                                    Toast.makeText(getContext(),mSpinner.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                                    edittextDanhmuc_2.setText(mSpinner.getSelectedItem().toString());
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+                        mBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.dismiss();
+                            }
+                        });
+                        mBuilder.setView(mView);
+                        AlertDialog dialog = mBuilder.create();
+                        dialog.show();
+                    }
+                });
+
                 edittextNgay_2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view_2) {
@@ -95,20 +133,19 @@ public class khoanchi extends Fragment {
                             @Override
                             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                                 // i:năm, i1:tháng, i2:ngày
-                                calendar.set(i,i1,i2);
+                                calendar.set(i, i1, i2);
                                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
                                 edittextNgay_2.setText(simpleDateFormat.format(calendar.getTime()));
                             }
-                        },nam,thang,ngay);
+                        }, nam, thang, ngay);
                         datePickerDialog.show();
                     }
                 });
-
                 //Hủy
                 buttonHuy_2.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View view) {
                         alertDialog.cancel();
-                        Toast.makeText(getContext(),"Hủy",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Hủy", Toast.LENGTH_LONG).show();
                     }
                 });
                 //Lưu
@@ -118,11 +155,13 @@ public class khoanchi extends Fragment {
                     public void onClick(View view) {
 
                         String danhmuc_2 = edittextDanhmuc_2.getText().toString();
-                       Integer sotien_2 = Integer.valueOf(edittextSotien_2.getText().toString());
+                        Log.d("log", edittextSotien_2.getText().toString());
+
+                        Integer sotien_2 = Integer.valueOf(edittextSotien_2.getText().toString());
                         String ngay_2 = edittextNgay_2.getText().toString();
                         String ghichu_2 = edittextGhichu_2.getText().toString();
 
-                        Item_Khoan_Chi item_khoan_chi = new Item_Khoan_Chi(danhmuc_2, sotien_2, ngay_2, ghichu_2);
+                        Item_Khoan_Chi item_khoan_chi = new Item_Khoan_Chi(danhmuc_2,sotien_2 , ngay_2, ghichu_2);
                         db_khoanchi.addKhoanchi(item_khoan_chi);
 
                         updateListKhoanchi();
@@ -143,18 +182,19 @@ public class khoanchi extends Fragment {
 
 
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                final View alert = LayoutInflater.from(getContext()).inflate(R.layout.suakhoanchi,null);
+                final View alert = LayoutInflater.from(getContext()).inflate(R.layout.suakhoanchi, null);
                 builder.setView(alert);
 
-                final EditText edittextDanhmuc_22,editSotien_22,editSuangay_22,editGhichu_22;
-                final Button editXoa_22,editUpdate_22,editResert_22,btncancel_22;
+                final EditText edittextDanhmuc_22, editSotien_22, editSuangay_22, editGhichu_22;
+                final Button editXoa_22, editUpdate_22, editResert_22, btncancel_22;
+                final ImageButton btnMenuSuaKhoanChi;
 
 
                 edittextDanhmuc_22 = alert.findViewById(R.id.editDanhmuc_22);
                 editSotien_22 = alert.findViewById(R.id.editSotien_22);
                 editSuangay_22 = alert.findViewById(R.id.editSuangay_22);
                 editGhichu_22 = alert.findViewById(R.id.editGhichu_22);
-
+                btnMenuSuaKhoanChi = alert.findViewById(R.id.btnMenuSuaKhoanChi);
                 editXoa_22 = alert.findViewById(R.id.editXoa_22);
                 editUpdate_22 = alert.findViewById(R.id.editUpdate_22);
                 editResert_22 = alert.findViewById(R.id.editResert_22);
@@ -167,7 +207,39 @@ public class khoanchi extends Fragment {
                 editSuangay_22.setText(item_khoan_chi.getNgay_2());
                 editGhichu_22.setText(item_khoan_chi.getGhichu_2());
 
-
+                btnMenuSuaKhoanChi.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(),"Adddd",Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
+                        View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
+                        final Spinner mSpinner = mView.findViewById(R.id.menuSpinner);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,
+                                getResources().getStringArray(R.array.Spend));
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        mSpinner.setAdapter(adapter);
+                        Toast.makeText(getContext(),"Adddd_22222",Toast.LENGTH_SHORT).show();
+                        mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                if(!mSpinner.getSelectedItem().toString().equalsIgnoreCase("Chọn mục thu")){
+                                    Toast.makeText(getContext(),mSpinner.getSelectedItem().toString(),Toast.LENGTH_SHORT).show();
+                                    edittextDanhmuc_22.setText(mSpinner.getSelectedItem().toString());
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+                        mBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.dismiss();
+                            }
+                        });
+                        mBuilder.setView(mView);
+                        AlertDialog dialog = mBuilder.create();
+                        dialog.show();
+                    }
+                });
                 //sửa ngày
                 editSuangay_22.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -184,11 +256,11 @@ public class khoanchi extends Fragment {
                             @Override
                             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                                 // i:năm, i1:tháng, i2:ngày
-                                calendar.set(i,i1,i2);
+                                calendar.set(i, i1, i2);
                                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
                                 editSuangay_22.setText(simpleDateFormat.format(calendar.getTime()));
                             }
-                        },nam,thang,ngay);
+                        }, nam, thang, ngay);
                         datePickerDialog.show();
                     }
                 });
@@ -203,11 +275,11 @@ public class khoanchi extends Fragment {
                         item_khoan_chi.setGhichu_2(editGhichu_22.getText().toString());
                         db_khoanchi.updateKhoanchi(item_khoan_chi);
                         int result = db_khoanchi.updateKhoanchi(item_khoan_chi);
-                        if(result>0){
+                        if (result > 0) {
                             updateListKhoanchi();
                         }
-                        Toast.makeText(getContext(),"update successfuly",Toast.LENGTH_SHORT).show();
-                        alertDialog.cancel();
+                        Toast.makeText(getContext(), "update successfuly", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
                     }
                 });
 
@@ -226,21 +298,21 @@ public class khoanchi extends Fragment {
                     public void onClick(View view) {
                         Item_Khoan_Chi muc = list_khoanchi.get(position);
                         int result = db_khoanchi.deleteKhoanchi(muc.getId_2());
-                        if(result>0){
+                        if (result > 0) {
                             Toast.makeText(getContext(), "Delete successfuly", Toast.LENGTH_SHORT).show();
                             updateListKhoanchi();
-                        }else{
+                        } else {
                             Toast.makeText(getContext(), "Delete fail", Toast.LENGTH_SHORT).show();
                         }
-                        alertDialog.cancel();
+                        alertDialog.dismiss();
                     }
                 });
 
                 btncancel_22.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getContext(),"Cancel",Toast.LENGTH_SHORT).show();
-                        alertDialog.cancel();
+                        Toast.makeText(getContext(), "Cancel", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
                     }
                 });
 
@@ -254,22 +326,21 @@ public class khoanchi extends Fragment {
     }
 
 
-
-    public void updateListKhoanchi(){
+    public void updateListKhoanchi() {
         list_khoanchi.clear();
         list_khoanchi.addAll(db_khoanchi.getAllKhoanchi());
-        if(adapterKhoanChi!= null){
+        if (adapterKhoanChi != null) {
             adapterKhoanChi.notifyDataSetChanged();
         }
     }
 
     private void setAdapter() {
         if (adapterKhoanChi == null) {
-            adapterKhoanChi = new AdapterKhoanChi(getContext(),R.layout.item_khoan_chi,list_khoanchi);
+            adapterKhoanChi = new AdapterKhoanChi(getContext(), R.layout.item_khoan_chi, list_khoanchi);
             rvKhoanchi.setAdapter(adapterKhoanChi);
-        }else{
+        } else {
             adapterKhoanChi.notifyDataSetChanged();
-            rvKhoanchi.setSelection(adapterKhoanChi.getCount()-1);
+            rvKhoanchi.setSelection(adapterKhoanChi.getCount() - 1);
         }
     }
 }

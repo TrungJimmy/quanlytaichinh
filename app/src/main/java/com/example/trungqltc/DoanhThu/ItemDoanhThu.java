@@ -3,19 +3,19 @@ package com.example.trungqltc.DoanhThu;
 public class ItemDoanhThu {
     int id;
     String danhmuc_1;
-    int tien_1;
+    float tien_1;
     String ngay_1;
     String ghichu_1;
 
     public ItemDoanhThu() {
     }
 
-    public ItemDoanhThu(int tien_1) {
+    public ItemDoanhThu(float tien_1) {
         this.tien_1 = tien_1;
     }
 
 
-    public ItemDoanhThu(int id, String danhmuc_1, int tien_1, String ngay_1, String ghichu_1) {
+    public ItemDoanhThu(int id, String danhmuc_1, float tien_1, String ngay_1, String ghichu_1) {
         this.id = id;
         this.danhmuc_1 = danhmuc_1;
         this.tien_1 = tien_1;
@@ -23,7 +23,7 @@ public class ItemDoanhThu {
         this.ghichu_1 = ghichu_1;
     }
 
-    public ItemDoanhThu(String danhmuc_1, int tien_1, String ngay_1, String ghichu_1) {
+    public ItemDoanhThu(String danhmuc_1, float tien_1, String ngay_1, String ghichu_1) {
         this.danhmuc_1 = danhmuc_1;
         this.tien_1 = tien_1;
         this.ngay_1 = ngay_1;
@@ -46,11 +46,11 @@ public class ItemDoanhThu {
         this.danhmuc_1 = danhmuc_1;
     }
 
-    public int getTien_1() {
+    public float getTien_1() {
         return tien_1;
     }
 
-    public void setTien_1(int tien_1) {
+    public void setTien_1(float tien_1) {
         this.tien_1 = tien_1;
     }
 

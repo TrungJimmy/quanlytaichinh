@@ -9,4 +9,36 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_pie__chart">Pie_Chart</string>
     <string name="title_activity_pie_chart">PieChart</string>
+
+    <string-array name="Income" >
+        <item>Cho thuê nhà</item>
+        <item>Quà tặng</item>
+        <item>Trợ cấp</item>
+        <item>Việc làm</item>
+        <item>Buôn bán</item>
+        <item>Thu nhập chính</item>
+        <item>Lãi suất</item>
+        <item>Xổ số</item>
+    </string-array>
+    <string-array name="Spend">
+        <item>Grab, Uber</item>
+        <item>Mua sắm</item>
+        <item>Sức khỏe</item>
+        <item>xe bus</item>
+        <item>Vé máy bay</item>
+        <item>Cho vay</item>
+        <item>Kinh doanh</item>
+        <item>Ăn uống</item>
+        <item>Điện nước</item>
+        <item>Con cái</item>
+        <item>Quần áo</item>
+        <item>Điện thoại</item>
+        <item>Xăng xe</item>
+        <item>Du lịch</item>
+        <item>Nhà nghỉ</item>
+        <item>Phụ phí</item>
+        <item>Nhà cửa</item>
+        <item>Hiếu hỉ</item>
+        <item>Cafe</item>
+    </string-array>
 </resources>

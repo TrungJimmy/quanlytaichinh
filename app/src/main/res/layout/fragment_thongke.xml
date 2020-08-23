@@ -10,73 +10,355 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
-        android:layout_marginTop="100dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textSize="@dimen/_30sdp"
-            android:background="@color/colorPrimary"
-            android:text="Tổng thu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textSize="@dimen/_25sdp"
-            android:id="@+id/tongThu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textSize="@dimen/_30sdp"
-            android:background="@color/colorPrimary"
-            android:text="Chi tiêu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textSize="@dimen/_25sdp"
-            android:id="@+id/tongchi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textSize="@dimen/_30sdp"
-            android:background="@color/colorPrimary"
-            android:text="Cân đối"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:textSize="@dimen/_25sdp"
-            android:id="@+id/candoi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<!--    <LinearLayout-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
 
-    </LinearLayout>
+<!--           <FrameLayout-->
+<!--               android:layout_width="match_parent"-->
+<!--               android:layout_height="match_parent"-->
+<!--               -->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_30sdp"-->
+
+<!--                android:text="Tổng thu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_25sdp"-->
+<!--                android:id="@+id/tongThu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--              />-->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_30sdp"-->
+<!--                android:background="@color/colorPrimary"-->
+<!--                android:text="Chi tiêu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_25sdp"-->
+<!--                android:id="@+id/tongchi"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_30sdp"-->
+<!--                android:background="@color/colorPrimary"-->
+<!--                android:text="Cân đối"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <TextView-->
+<!--                android:textSize="@dimen/_25sdp"-->
+<!--                android:id="@+id/candoi"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+
+<!--    </LinearLayout>-->
+
     <LinearLayout
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="3">
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/tong"
-            android:text="Tất cả"
-            android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/thang"
-            android:text="Tháng"
-            android:background="@color/white"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/tong"
+                android:text="Tất cả"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+<!--            <Button-->
+<!--                android:id="@+id/thang"-->
+<!--                android:text="Tháng"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+<!--            <Button-->
+<!--                android:layout_weight="1"-->
+<!--                android:id="@+id/nam"-->
+<!--                android:text="Năm"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/nam"
-            android:text="Năm"
-            android:background="@color/white"
+            android:layout_height="100dp"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:background="@color/green">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_ngan_sach"/>
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TỔNG THU"
+                        android:textColor="#4c4c4c"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="4dp">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spend: 0$"
+                        android:layout_marginLeft="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="12dp"
+                        android:layout_marginTop="6dp">
+                    </TextView>
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 10,000,000.00"
+                    android:id="@+id/tongThu"
+                    android:textSize="18dp"
+                    android:textColor="#4c4c4c"
+                    android:layout_marginRight="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remain: $0"
+
+                    android:textSize="12dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="6dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="100dp"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:background="@color/green">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_ngan_sach"/>
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TỔNG CHI"
+                        android:textColor="#4c4c4c"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="4dp">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spend: 0$"
+                        android:layout_marginLeft="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="12dp"
+                        android:layout_marginTop="6dp">
+                    </TextView>
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 10,000,000.00"
+                    android:textColor="#4c4c4c"
+                    android:id="@+id/tongchi"
+                    android:textSize="18dp"
+                    android:layout_marginRight="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remain: $0"
+                    android:id="@+id/reMain"
+                    android:textSize="12dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="6dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:weightSum="1"
+            android:orientation="horizontal"
+            android:background="@color/green">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/icon_ngan_sach"/>
+
+
+                </FrameLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CÂN ĐỐI"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#4c4c4c"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="4dp">
+                    </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spend: 0$"
+                        android:layout_marginLeft="4dp"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="12dp"
+                        android:layout_marginTop="6dp">
+                    </TextView>
+
+
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ 10,000,000.00"
+                    android:textColor="#4c4c4c"
+                    android:id="@+id/candoi"
+                    android:textSize="18dp"
+                    android:layout_marginRight="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Remain: 0 vnđ"
+                    android:id="@+id/reMain"
+                    android:textSize="12dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="6dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
@@ -94,15 +376,20 @@
             android:layout_height="wrap_content"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            app:fab_title="biểu đồ 2"
-            app:fab_size="mini"
-            android:id="@+id/floataction2"
-            app:fab_icon="@drawable/ic_add_black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_gravity="bottom|right"
+            android:id="@+id/btnaddKhoanchi"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_add_black"
+            app:cb_pressedRingWidth="7dip"
+            app:borderWidth="0dp"
+            />
 
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
 
 
 

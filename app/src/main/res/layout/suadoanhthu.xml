@@ -5,119 +5,149 @@
     android:outlineAmbientShadowColor="@color/colorAccent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#2CBF60">
     <TextView
-        android:shadowColor="@color/colorAccent"
+        android:textColor="@color/white"
         android:gravity="center"
-        android:textSize="@dimen/_35sdp"
+        android:textSize="28dp"
+        android:layout_gravity="center"
         android:text="Doanh Thu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+</FrameLayout>
 
     //danh mục
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
             android:id="@+id/tvDanhmuc"
-            android:layout_weight="3"
             android:textSize="20dp"
             android:gravity="center"
             android:text="Danh mục:"
-            android:layout_width="match_parent"
+            android:textAlignment="viewEnd"
+            android:layout_width="100dp"
             android:layout_height="match_parent"/>
         <EditText
-
             android:id="@+id/editDanhmuc_11"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"/>
+        <ImageButton
+            android:id="@+id/btnMenuSuaDoanhThu"
+            android:src="@drawable/icon_menu_bg_off"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="center_vertical"
+            />
+
     </LinearLayout>
 
 
 
     //số tiền
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdp"
-        android:weightSum="16"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
-            android:layout_weight="6"
+
             android:gravity="center"
             android:id="@+id/tvSotien"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:textAlignment="viewEnd"
             android:text="Số tiền: "
             android:textSize="20dp" />
 
         <EditText
             android:inputType="number"
             android:id="@+id/editSotien_11"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
         <TextView
             android:text="VNĐ"
-            android:layout_weight="7"
-            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
     //ngày
     <LinearLayout
-        android:weightSum="16"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
 
         <TextView
-            android:layout_weight="10"
             android:id="@+id/tvNgay_11"
             android:gravity="center"
             android:textSize="20dp"
             android:text="Ngày:"
-            android:layout_width="match_parent"
+            android:textAlignment="viewEnd"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/editSuangay_11"
             android:hint="Chọn ngày"
-            android:layout_weight="5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:background="@drawable/icon_lich"
-            android:id="@+id/btnNgay_11"
             android:layout_weight="1"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            />
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icons8_calendar_96"/>
+
+<!--        <Button-->
+<!--            android:background="@drawable/icon_lich"-->
+<!--            android:id="@+id/btnNgay_11"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="@dimen/_60sdp"-->
+<!--            android:layout_height="@dimen/_60sdp"/>-->
     </LinearLayout>
 
 
 
     //ghi chú
     <LinearLayout
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
-            android:layout_weight="3"
+
             android:gravity="center"
             android:id="@+id/tvGhichu"
             android:textSize="20dp"
             android:text="Ghi chú:"
-            android:layout_width="match_parent"
+            android:textAlignment="viewEnd"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/editGhichu_11"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
 
     </LinearLayout>
 
@@ -129,33 +159,48 @@
         android:gravity="center"
         android:weightSum="4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_weight="1"
-            android:text="Xoa"
-            android:id="@+id/editXoa_11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_weight="1"
-            android:id="@+id/editResert_11"
-            android:text="Resert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
 
         <Button
             android:layout_weight="1"
             android:id="@+id/editUpdate_11"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_height="wrap_content"
-            android:text="LƯU" />
+            android:text="LƯU"
+            android:background="@drawable/ovan_button"
+            android:textColor="@color/white"/>
+        <Button
+            android:layout_weight="1"
+            android:text="Xoa"
+            android:textColor="@color/white"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/editXoa_11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ovan_button"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/editResert_11"
+            android:text="Resert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ovan_button"
+            android:textColor="@color/white"/>
+
+
         <Button
             android:layout_weight="1"
             android:id="@+id/btncancel_11"
             android:text="CANCEL"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/ovan_button"
+            android:textColor="@color/white"/>
 
 
 

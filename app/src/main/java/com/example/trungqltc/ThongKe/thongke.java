@@ -18,8 +18,11 @@ import com.example.trungqltc.KhoanChi.Item_Khoan_Chi;
 import com.example.trungqltc.R;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class thongke extends Fragment {
@@ -33,9 +36,10 @@ public class thongke extends Fragment {
     Item_Khoan_Chi item_khoan_chi;
     FloatingActionButton floatingActionButton1;
     FloatingActionButton floatingActionButton2;
+    DecimalFormat integerFormatter = new DecimalFormat("#,###.###", new DecimalFormatSymbols(Locale.US));
 
 
-    ArrayList<Integer> Sum;
+    ArrayList<Float> Sum;
 
     int tong_DT=0;
     int tong_KC=0;
@@ -62,7 +66,7 @@ public class thongke extends Fragment {
         candoi = view.findViewById(R.id.candoi);
 
         floatingActionButton1 = view.findViewById(R.id.floataction1);
-        floatingActionButton2 = view.findViewById(R.id.floataction2);
+        floatingActionButton2 = view.findViewById(R.id.btnaddKhoanchi);
 
         floatingActionButton1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +140,7 @@ public class thongke extends Fragment {
         }
         db_Doanhthu.updateDoanhthu(itemDoanhThu);
         itemDoanhThu.setTien_1(tong_DT);
-        tongThu.setText(String.valueOf(tong_DT));
+        tongThu.setText(String.valueOf(integerFormatter.format(tong_DT)) + " vnđ");
     }
 
     public void TongChi(){
@@ -155,12 +159,12 @@ public class thongke extends Fragment {
         }
         db_Khoanchi.updateKhoanchi(item_khoan_chi);
         item_khoan_chi.setTien_2(tong_KC);
-        tongChi.setText(String.valueOf(tong_KC));
+        tongChi.setText(String.valueOf(integerFormatter.format(tong_KC)) + " vnđ");
 
     }
     public void CanDoi(){
         CanDoi = tong_DT-tong_KC ;
-        candoi.setText(String.valueOf(CanDoi));
+        candoi.setText(String.valueOf(integerFormatter.format(CanDoi)) + " vnđ");
     }
 
 

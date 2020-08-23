@@ -6,49 +6,61 @@
     android:layout_height="match_parent">
 
     //danh mục
-
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:shadowColor="@color/colorAccent"
-        android:text="Khoản Chi"
-        android:textSize="@dimen/_35sdp" />
+        android:layout_height="50dp"
+        android:background="#2CBF60">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Khoản Chi"
+            android:textSize="28dp" />
+    </FrameLayout>
 
     <LinearLayout
-        android:layout_marginTop="10dp"
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
             android:id="@+id/tvDanhmuc"
-            android:layout_weight="3"
             android:textSize="20dp"
             android:gravity="center"
-            android:text="Danh mục"
-            android:layout_width="match_parent"
+            android:text="Danh mục:"
+            android:layout_width="100dp"
+            android:textAlignment="viewEnd"
             android:layout_height="match_parent"/>
         <EditText
-
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/editDanhmuc_22"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+        <ImageButton
+            android:id="@+id/btnMenuSuaKhoanChi"
+            android:src="@drawable/icon_menu_bg_off"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="center_vertical"
+            />
     </LinearLayout>
 
 
     //số tiền
     <LinearLayout
-        android:weightSum="16"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
-            android:layout_weight="6"
+            android:textAlignment="viewEnd"
             android:gravity="center"
             android:id="@+id/tvSotien"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:text="Số tiền: "
             android:textSize="20dp" />
@@ -56,65 +68,72 @@
         <EditText
             android:inputType="number"
             android:id="@+id/editSotien_22"
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
         <TextView
             android:text="VNĐ"
-            android:layout_weight="7"
-            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
 
     //ngày
     <LinearLayout
-        android:weightSum="16"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
 
         <TextView
-            android:layout_weight="10"
             android:id="@+id/tvNgay"
             android:gravity="center"
             android:textSize="20dp"
             android:text="Ngày:"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"/>
         <EditText
             android:id="@+id/editSuangay_22"
-            android:layout_weight="5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:textSize="@dimen/_20sdp"
-            android:background="@drawable/icon_lich"
-            android:id="@+id/btnNgay_22"
             android:layout_weight="1"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"/>
+        <ImageButton
+            android:textSize="20dp"
+            android:src="@drawable/icons8_calendar_96"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/btnNgay_22"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="6dp"/>
     </LinearLayout>
 
     //ghi chú
     <LinearLayout
-        android:weightSum="4"
+        android:weightSum="1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp">
         <TextView
-            android:layout_weight="3"
             android:gravity="center"
             android:id="@+id/tvGhichu"
             android:textSize="20dp"
-            android:text="Ghi chú"
-            android:layout_width="match_parent"
+            android:text="Ghi chú:"
+            android:layout_width="100dp"
+            android:textAlignment="viewEnd"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/editGhichu_22"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
 
@@ -125,29 +144,40 @@
         android:gravity="center"
         android:weightSum="4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="@dimen/_20sdp">
 
-        <Button
-            android:layout_weight="1"
-            android:text="XÓA"
-            android:id="@+id/editXoa_22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
         <Button
             android:layout_weight="1"
             android:text="LƯU"
             android:id="@+id/editUpdate_22"
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
+            android:background="@drawable/ovan_button"
             android:layout_height="wrap_content"/>
         <Button
             android:layout_weight="1"
+            android:text="XÓA"
+            android:id="@+id/editXoa_22"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ovan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_weight="1"
             android:id="@+id/editResert_22"
+            android:layout_marginLeft="5dp"
             android:text="Resert"
+            android:background="@drawable/ovan_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
             android:layout_weight="1"
             android:id="@+id/btncancel_22"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ovan_button"
             android:text="CANCEL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

@@ -30,20 +30,13 @@ public class PieChart extends AppCompatActivity {
         id1 = findViewById(R.id.id1);
         id2 = findViewById(R.id.id2);
 
-
-
-
-        Description des = new Description();
-        des.setText("biểu đồ thống kê");
-        des.setTextSize(30f);
-
         pieChart.setRotationEnabled(true);
         pieChart.setHoleRadius(35f);
         pieChart.setTransparentCircleAlpha(0);
-        pieChart.setCenterText("PieChart");
+        pieChart.setCenterText("Thong Ke");
         pieChart.setCenterTextSize(20);
-        pieChart.setDescription(des);
-        pieChart.setTransparentCircleRadius(50f);
+        pieChart.setEntryLabelTextSize(20);
+        pieChart.setTransparentCircleRadius(30f);
         pieChart.setDrawEntryLabels(true);
 
 
@@ -60,13 +53,15 @@ public class PieChart extends AppCompatActivity {
         value.add(new PieEntry(tongthu,"Tổng thu"));
         value.add(new PieEntry(tongchi,"Tổng chi"));
 
-        PieDataSet pieDataset = new PieDataSet(value,"Thống kê");
+        PieDataSet pieDataset = new PieDataSet(value,"");
         PieData pieData1 = new PieData(pieDataset);
         pieChart.setData(pieData1);
+        pieDataset.setValueTextSize(20);
+        pieDataset.setValueTextColor(Color.BLUE);
 
         ArrayList<Integer> colors=new ArrayList<>();
-        colors.add(Color.CYAN);
-        colors.add(Color.MAGENTA);
+        colors.add(Color.GRAY);
+        colors.add(Color.GREEN);
 
         pieDataset.setColors(colors);
         pieChart.animateXY(1400,1400);
