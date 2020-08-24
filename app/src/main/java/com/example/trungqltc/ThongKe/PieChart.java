@@ -13,13 +13,18 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class PieChart extends AppCompatActivity {
     TextView id1,id2;
     com.github.mikephil.charting.charts.PieChart pieChart;
+    DecimalFormat integerFormatter = new DecimalFormat("#,###.###", new DecimalFormatSymbols(Locale.US));
+
 
 
     @Override
@@ -46,8 +51,9 @@ public class PieChart extends AppCompatActivity {
          int sum = tongchi+tongthu;
          float phantram1 = (tongthu/sum);
 
-         id1.setText("THU: "+tongthu+ "vnđ");
-         id2.setText("CHI: "+tongchi+"vnđ");
+        id1.setText("THU: "+String.valueOf(integerFormatter.format(tongthu))+ "vnđ");
+        id2.setText("CHI: "+String.valueOf(integerFormatter.format(tongchi))+ "vnđ");
+
 
         List<PieEntry> value = new ArrayList<>();
         value.add(new PieEntry(tongthu,"Tổng thu"));
@@ -60,8 +66,8 @@ public class PieChart extends AppCompatActivity {
         pieDataset.setValueTextColor(Color.BLUE);
 
         ArrayList<Integer> colors=new ArrayList<>();
-        colors.add(Color.GRAY);
         colors.add(Color.GREEN);
+        colors.add(Color.RED);
 
         pieDataset.setColors(colors);
         pieChart.animateXY(1400,1400);

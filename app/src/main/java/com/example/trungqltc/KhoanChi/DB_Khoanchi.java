@@ -27,7 +27,7 @@ public class DB_Khoanchi extends SQLiteOpenHelper {
     private String SQLQuery = "CREATE TABLE " + KHOAN_CHI + " (" +
             ID_2 + " integer primary key, " +
             DANH_MUC_2 + " STRING, " +
-            SO_TIEN_2 + " STRING, " +
+            SO_TIEN_2 + " INTEGER, " +
             NGAY_2 + " STRING, " +
             GHI_CHU_2 + " STRING ) "  ;
 

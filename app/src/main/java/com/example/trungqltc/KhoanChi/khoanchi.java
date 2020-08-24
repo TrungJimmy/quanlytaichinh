@@ -87,7 +87,6 @@ public class khoanchi extends Fragment {
                 btnMenuAddKhoanChi.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(),"Adddd",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                         View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
                         final Spinner mSpinner = mView.findViewById(R.id.menuSpinner);
@@ -95,7 +94,6 @@ public class khoanchi extends Fragment {
                                 getResources().getStringArray(R.array.Spend));
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         mSpinner.setAdapter(adapter);
-                        Toast.makeText(getContext(),"Adddd_22222",Toast.LENGTH_SHORT).show();
                         mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
@@ -210,7 +208,6 @@ public class khoanchi extends Fragment {
                 btnMenuSuaKhoanChi.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(),"Adddd",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                         View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
                         final Spinner mSpinner = mView.findViewById(R.id.menuSpinner);
@@ -218,7 +215,6 @@ public class khoanchi extends Fragment {
                                 getResources().getStringArray(R.array.Spend));
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         mSpinner.setAdapter(adapter);
-                        Toast.makeText(getContext(),"Adddd_22222",Toast.LENGTH_SHORT).show();
                         mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
@@ -270,7 +266,7 @@ public class khoanchi extends Fragment {
                     public void onClick(View view) {
 
                         item_khoan_chi.setDanhmuc_2(edittextDanhmuc_22.getText().toString());
-                        item_khoan_chi.setTien_2(Integer.parseInt(editSotien_22.getText().toString()));
+                        item_khoan_chi.setTien_2(Float.parseFloat(editSotien_22.getText().toString()));
                         item_khoan_chi.setNgay_2(editSuangay_22.getText().toString());
                         item_khoan_chi.setGhichu_2(editGhichu_22.getText().toString());
                         db_khoanchi.updateKhoanchi(item_khoan_chi);

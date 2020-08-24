@@ -45,6 +45,8 @@ public class doanhthu extends Fragment {
     EditText editDanhmuc_11;
 //    ImageButton btnMenuAddDoanhThu;
 //    ImageButton btnMenuSuaDoanhThu;
+DecimalFormat integerFormatter = new DecimalFormat("#,###.###", new DecimalFormatSymbols(Locale.US));
+
 
     public AlertDialog alertDialog;
 
@@ -207,6 +209,7 @@ public class doanhthu extends Fragment {
                 editDanhmuc_11 = alert.findViewById(R.id.editDanhmuc_11);
 
                 final ItemDoanhThu itemDoanhThu = list_doanhthu.get(position);
+                //editSotien_11.setText(String.valueOf(integerFormatter.format(editSotien_11)));
 
                 editDanhmuc_11.setText(itemDoanhThu.getDanhmuc_1());
                 editSotien_11.setText((String.valueOf(itemDoanhThu.getTien_1())));
@@ -217,7 +220,6 @@ public class doanhthu extends Fragment {
                 btnMenuSuaDoanhThu.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getContext(),"Adddd",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
                         View mView = getLayoutInflater().inflate(R.layout.dialog_spinner, null);
                         final Spinner mSpinner = mView.findViewById(R.id.menuSpinner);
@@ -225,7 +227,6 @@ public class doanhthu extends Fragment {
                                 getResources().getStringArray(R.array.Income));
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         mSpinner.setAdapter(adapter);
-                        Toast.makeText(getContext(),"Adddd_22222",Toast.LENGTH_SHORT).show();
                         mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {

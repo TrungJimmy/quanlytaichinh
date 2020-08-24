@@ -1,6 +1,7 @@
 package com.example.trungqltc.DoanhThu;
 
 public class ItemDoanhThu {
+
     int id;
     String danhmuc_1;
     float tien_1;
@@ -53,6 +54,7 @@ public class ItemDoanhThu {
     public void setTien_1(float tien_1) {
         this.tien_1 = tien_1;
     }
+
 
     public String getNgay_1() {
         return ngay_1;

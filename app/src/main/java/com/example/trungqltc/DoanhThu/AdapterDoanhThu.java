@@ -40,6 +40,7 @@ public class AdapterDoanhThu extends ArrayAdapter<ItemDoanhThu> {
             viewHolder.ngay_1  = (TextView)convertView.findViewById(R.id.ngay_1);
             viewHolder.ghichu_1 = (TextView)convertView.findViewById(R.id.ghichu_1);
 
+
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();

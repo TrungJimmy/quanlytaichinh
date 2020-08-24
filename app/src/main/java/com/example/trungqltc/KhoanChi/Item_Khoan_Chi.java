@@ -11,6 +11,7 @@ public class Item_Khoan_Chi {
 
     public Item_Khoan_Chi() {
     }
+
     public Item_Khoan_Chi(int tien_2) {
         this.tien_2 = tien_2;
     }
